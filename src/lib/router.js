@@ -4,33 +4,48 @@ import { registrarse } from './view/templateRegistrarse.js';
 import {Paginaprincipal} from './view/templatePosts.js'
 
 
+//import { Paginaprincipal} from './view/templatePosts.js'
+
+
+
 export const changeRoute = (hash) => {
-    // if (hash === '#/Iniciar-Sesion') {
+
+    //return showTemplate(hash)
+    /*
+     if (hash === '#/') {
+        return showTemplate(hash)
+     } else if (hash === '#/IniciarSesion') {
          return showTemplate(hash)
  
-    /* } else if (hash === '#/Registrarse') {
+     } else if (hash === '#/Registrarse') {
          return showTemplate(hash)
+         
+     } else if (hash === '#/Posts') {
+        return showTemplate(hash)   
+     
      } else {
          return showTemplate(hash)
-     }*/
- };
+     }
  
+ */
+   
+
+ //const containerRoot = document.getElementById('root');
  const showTemplate = (hash) => {
-  
      switch (hash) {
          case '#/':
          // containerRoot.appendChild(Login());
              inicio();
              break;
-         case '#/Iniciar-Sesion':
-         //containerRoot.appendChild(Login());
-             Login();
+         case '#/IniciarSesion':
+         //containerRoot.innerHTML = Login();
+            Login();
              break;
          case '#/Registrarse':
              //containerRegistrarse.innerHTML = registrarse();
              registrarse();
              break;
-         case '#/Registrar':
+         case '#/Posts':
              //containerPost.innerHTML = Paginaprincipal();
              Paginaprincipal();
                  break;
@@ -38,7 +53,10 @@ export const changeRoute = (hash) => {
              inicio();
      }
          
- }
+    }
+}
+
+
  
  
  

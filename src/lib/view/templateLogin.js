@@ -54,6 +54,10 @@ const LoadRegistrarFuncion = () => {
      
     
 
+    
+
+   
 };
  
   
+

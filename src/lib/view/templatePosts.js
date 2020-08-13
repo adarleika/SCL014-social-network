@@ -34,17 +34,18 @@ export const Paginaprincipal = () => {
 
   window.location.hash = "#/Posts";
   document.getElementById('root').innerHTML = posts;
-  LoadPosts();
+  //LoadPosts();
 
  // return posts;
 
 };
-
+/*
 const LoadPosts = () => {
     // Función que lleva desde logo segunda pagina a primera página
     const posts = document.getElementById('posts');
     posts.addEventListener('click', registrarse);
   };
 
+*/
 
 

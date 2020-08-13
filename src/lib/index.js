@@ -23,14 +23,14 @@ export  const Login = () => {
         <input class="password" id="password" type="password" placeholder="Contraseña" required>
 
         <div class="btns">
-        <button> <a href="#" onclick="location.href = document.referrer; return false;" class="atras">Atrás</a></button>
+        <button <a  href="#" onclick="location.href = document.referrer; return false;" class="atras">Atrás</a>
         <button type="submit" id='btnLogearse'   class="iniciarSesion">Iniciar sesión</button>
         </div>
     </form>
     </div>
     `;
 
-      window.location.hash = "#/Iniciar-Sesion";
+      window.location.hash = "#/IniciarSesion";
       document.getElementById('root').innerHTML = viewLogin;
       loadLogin();
 
@@ -39,10 +39,19 @@ export  const Login = () => {
 
 } 
 
-  const loadLogin = () => {
-  const btnLogin = document.querySelector('#btnLogearse');
-  btnLogin.addEventListener('click', logeo);
+    const loadLogin = () => {
+   // Función que lleva desde la pagina de inicio a la segunda
+   const btnLogin = document.querySelector('#btnLogearse');
+   btnLogin.addEventListener('click', () => {
+    signIn(Paginaprincipal);
+   });
 
+
+
+  
+  //const btnLogin = document.querySelector('#btnLogearse');
+  //btnLogin.addEventListener('click', logeo);
+/*
   function logeo() {
     const siginEmail = document.getElementById('email').value;
     const siginPassword = document.getElementById('password').value;
@@ -64,7 +73,7 @@ export  const Login = () => {
       console.log ('pasate a esta parte del logeo')
      }
 
-  };
+  };*/
   }
 
    

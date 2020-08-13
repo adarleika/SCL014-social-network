@@ -72,9 +72,12 @@ export const registrarse = () => {
 
  const loadRegistrar = () => {
   const btnregistro = document.querySelector('#btn-registrarse');
-  btnregistro.addEventListener('click', registro);
+  btnregistro.addEventListener('click', () => {
+    sigupForm(Paginaprincipal);
+   });
+  }
 
-
+/*
   function registro() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
@@ -86,13 +89,15 @@ export const registrarse = () => {
     };
 
     if(email === '' || password === '') {
-      alert('Los campos no deben quedar vacios');
+      alert('Debe rellenar todos los campos');
       //console('los campos no deben quedar vacios');
      }else {
       sigupForm(Paginaprincipal, user);
-     // alert('Te has registrado exitosamente, inicie sesion con los datos de su cuenta!');
+      alert('Te has registrado exitosamente');
      }
 
   };
+
      
 }
+*/
