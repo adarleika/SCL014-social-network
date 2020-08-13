@@ -250,3 +250,27 @@ body {
 
 }
 
+.previous{
+    height: 15%;
+    width: 15%;
+}
+
+.house{
+    height: 15%;
+    width: 15%;
+}
+
+.heart{
+    height: 15%;
+    width: 15%;
+}
+
+.btn-imagenes{
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    margin-top: 8px;
+    margin: 2px 0 2px 0;
+    padding-top: 400px;
+}
