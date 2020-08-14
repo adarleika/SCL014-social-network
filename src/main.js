@@ -19,28 +19,11 @@ import {changeRoute} from './lib/router.js';
     document.getElementById ('root').innerHTML=inicio()
     window.addEventListener('hashchange', () => {
     inicio();
-<<<<<<< HEAD
-    //Login(); //OOOOJOOOOO CON ESTO 
-=======
     //Login(); OOOOJOOOOO CON ESTO 
->>>>>>> 77e8d3c499773510040280b7c56586376a7f0562
      console.log(window.location.hash);
      changeRoute(window.location.hash)
         })
 }
-<<<<<<< HEAD
-window.addEventListener('load', init)
-*/
-
-const init = () => {
-    changeRoute(window.location.hash)
-    window.addEventListener('hashchange', () => {
-    console.log(window.location.hash);
-     changeRoute(window.location.hash)
-    })
-}
-window.addEventListener('load', init)
-=======
 window.addEventListener('load', init)*/
 
 const init = () => {
@@ -52,4 +35,3 @@ const init = () => {
     })
 }
 window.addEventListener('load', init);
->>>>>>> 77e8d3c499773510040280b7c56586376a7f0562
