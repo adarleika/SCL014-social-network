@@ -1,27 +1,4 @@
-/*
-export const sigupForm = (sigupEmail, sigupPassword) => {
-      console.log('aqui entra')
-      firebase.auth().createUserWithEmailAndPassword(sigupEmail, sigupPassword).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // [START_EXCLUDE]
-        if (errorCode == 'auth/weak-password') {
-          alert('The password is too weak.');
-        } else {
-          alert(errorMessage);
-        }
-        console.log(error);
-        // [END_EXCLUDE]
-      });
-      // [END createwithemail]
 
-    }
-
-*/
-    // Funcion Registrarse
-
-//export const sigupForm = document.querySelector('#form-registrarse');
 
 export const sigupForm = (callback) => {
     console.log('aqui entra');
@@ -59,134 +36,46 @@ export const sigupForm = (callback) => {
               //}
           });
               
-          //});
+          
   
    }
   
 
-  
-  
-  //export const siginForm = document.querySelector('#form-login');
-  // INICIAR SESION CON MAIL
-  /*export const siginForm = (email, password) => {
-      console.log('llamado');
-     // siginForm.addEventListener('submit', (e) => {
-        //  e.preventDefault();
-  
-          const siginEmail = document.querySelector('#email').value;
-          const siginPassword = document.querySelector('#password').value;
-  
-          
-          console.log(siginEmail, siginPassword);
-  
-          auth
-          .signInWithEmailAndPassword(siginEmail, siginPassword)
-          .then((userCredential) => {
-              siginForm.reset();
-  
-              console.log('te conectaste chama')
-          });
-    //  });  
-  */
-  
-  /*
-  export const siginForm = (email, password) => {
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .catch(function (error) {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ...
-      });
-  };
-  */
-  
-  /*
-  
-  export const inicioGoogle = document.querySelector('#botongoogle')
-  inicioGoogle.addEventListener('click', e => {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      auth.signInWithPopup(provider)
+export const inicioGoogle = (callback) => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider).then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    //var token = result.credential.accessToken;
+    // The signed-in user info.
+    //var user = result.user;
+    console.log (result.user)
+    callback ();
+    
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    //var errorMessage = error.message;
+    // The email of the user's account used.
+    //var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    //var credential = error.credential;
+   // if (errorCode === 'auth/wrong-password') {
+    //  alert('Contraseña erronea.');
+  //}
+      //     console.log(error);
+       //    console.log('error',errorMessage)
+   
+     /* auth.signInWithPopup(provider)
       .then(result => {
           console.log('inicio con google')
+     })
+     .catch(err => {
+         console.log(err)
       })
-      .catch(err => {
-          console.log(err)
-      })
-  });
   */
   
-  //const postList = document.querySelector('.posts')
-  
-  //const postList = document.querySelector('.inicio');
-  /*
-  const setupPosts = data => {
-      if (data.length) {
-          let html = '';
-          data.forEach(doc => {
-              const li = `
-                  <li>
-                      <h5>${doc.titulo}</h5>
-                      <p>${doc.descripcion}</p>
-                  </li>
-              `;
-              html += li;
-          });
-          postList.innerHTML = html;
-      } else {
-          postList.innerHTML = '<p>Debes loguearte</p>';
-      }
-  }
-  */
-  
-  
-    //  auth.onAuthStateChanged(user => {
-      //    if(user) {
-        //      fs.collection('posts')
-          //    .get()
-            //  .then((snapshot) => {
-              //    console.log(snapshot.docs)
-                //  setupPosts(snapshot.docs)
-              //})
-          //}else {
-            //  console.log('auth: no logueado')
-         // }
-      //})
-  
-  //}
-  
-  // logear con Google --esto lo llamaremos despues en TemplateLogin
- 
-//export const logeoGoogle = () => {
- // const provider = new firebase.auth.GoogleAuthProvider();
-  /*firebase.auth.signInWithPopup(provider).then(function(result) {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = result.credential.accessToken;
-    // The signed-in user info.
-    var user = result.user;
-    console.log ('user',user)
-    
-  }).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    console.log('error',errorMessage)*/
-   
-  //    auth.signInWithPopup(provider)
-  //    .then(result => {
-   //       console.log('inicio con google')
-  //    })
-    //  .catch(err => {
-  //        console.log(err)
-    //  })
-  
-  
-//};
-
+  })
+};
 
 //loguerase, esto lo llamaremos depsues en el template logearse
 //export const signIn = () => {
@@ -214,3 +103,43 @@ export const signIn = (callback) => {
    
  
 };
+
+export const post=(inputPosts) =>{
+  const db = firebase.firestore();
+  const usuario = () => firebase.auth()
+  .currentUser;
+  const user= usuario();
+  // Add a second document with a generated ID.
+  db.collection("post").add({
+  email:user.email,
+  nombre:user.displayName,
+  post:inputPosts,
+  uid:user.uid,
+})
+.then(function(docRef) {
+  console.log("Document written with ID: ", docRef.id);
+})
+.catch(function(error) {
+  console.error("Error adding document: ", error);
+});
+
+
+}
+
+export const leeme = () =>{
+  console.log ("entra aqui")
+  const db = firebase.firestore();
+  db.collection("post").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+
+        
+        const muestrame = document.getElementById('outputPost');
+        const infoPost = `<h3> queremos ver quien escribe: ${doc.data().nombre? doc.data().nombre : doc.data().email} </h3>
+          <p>${doc.data().post}</p>
+          `;
+          muestrame.innerHTML+=infoPost;
+    });
+});
+
+}
