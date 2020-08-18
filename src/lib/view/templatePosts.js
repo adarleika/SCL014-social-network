@@ -59,7 +59,13 @@ export const Paginaprincipal = () => {
      .addEventListener('click', () =>{
         const inputPosts = document.getElementById('inputPost').value;
         post(inputPosts);
+<<<<<<< HEAD
         
+=======
+
+        const btnIniciarSesion = document.querySelector('#enviaPost');
+        btnIniciarSesion.addEventListener('click', Paginaprincipal);
+>>>>>>> c3c57b5... update
 
      })
     // Función que lleva desde logo segunda pagina a primera página
