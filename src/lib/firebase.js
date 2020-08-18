@@ -160,8 +160,6 @@ export const leeme = () =>{
 });
 
 }
-<<<<<<< HEAD
-=======
 
 //datos para el perfil
 export const perfil=(inputPosts) =>{
@@ -203,4 +201,3 @@ export const leemePerfil = () =>{
 });
 
 }
->>>>>>> a28dcbb8bbf1457a1b96b86328f5ce7bcd603c7a
