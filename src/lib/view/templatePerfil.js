@@ -1,14 +1,14 @@
 import { registrarse } from './templateRegistrarse.js'
 import { post} from '../firebase.js'
 import {leeme} from '../firebase.js'
-import {Paginaperfil} from '../view/templatePerfil.js'
+import {perfil} from '../firebase.js'
 
 
-export const Paginaprincipal = () => {
-    const posts = ` 
+
+export const Paginaperfil = () => {
+    const perfil = ` 
    
-    
-      <div class="contenedorInicio" id="inicio">
+     <div class="contenedorInicio" id="inicio">
        <img src="img/logotipo1.png" class="logotipo" alt="logotipo">
 
             <main>
@@ -22,7 +22,7 @@ export const Paginaprincipal = () => {
                         <button class="loactual" id="loactual">Lo actual</button>
                         <button class="favoritos" id="favoritos"> Favoritos</button>
                         <button class="guardados" id="guardados"> Guardados</button>
-                        <button class= "fotoperfil" id="fotoperfil"> aqui va una foto </button>
+                        
                     </div>
                
                     </section>
@@ -30,47 +30,47 @@ export const Paginaprincipal = () => {
                 <button type="button" id="enviaPost"> Publicar </button>
               
                <p id="outputPost"> </p>  
-       
-               <!--        <div class="contenedorprincipal" id="inicio"> 
-                    <ul class="posts" id="posts">
-                    
-                    </ul>
-                </div>   -->
 
-                <!--  </main>
-             <div class="btn-imagenes">
-                <img class="previous" src="img/previous.png" alt="">
-                <img class="house" src="img/house.png" alt="">
-                <img class="heart" src="img/heart.png" alt="">
-            </div> -->
-   <!-- </div>-->
-   
-  `;
+      <div class="contenedorPerfil" id="contenedor-perfil">
+            <textarea  id="inputNombre"> Ingresa tu Nombre Completo</textarea>
+            <textarea  id="inputEmail"> Ingresa tu Email</textarea>
+            <textarea  id="inputCiudad"> Ingresa tu Ciudad</textarea>
+            <textarea  id="inputTrabajo"> Ingresa tu Trabajo</textarea>
+            <button type="button" id="enviaPerfil"> Subir Datos </button> 
 
-  window.location.hash = "#/Posts";
- document.getElementById('root').innerHTML = posts;
- 
- LoadPosts();
- leeme(); 
+            
+            
+               
+            
+            
+            `;
+
+ window.location.hash = "#/Perfil";
+ document.getElementById('root').innerHTML = perfil;
+ //LoadPosts();
+ //leeme(); 
 //  return posts;
-LoadDatosPerfil();
+  LoadPerfil(); 
+  leemePerfil();
 };
-
 
  export const LoadPosts = () => {
      document.getElementById('enviaPost')
      .addEventListener('click', () =>{
         const inputPosts = document.getElementById('inputPost').value;
         post(inputPosts);
-        const cargaPerfil = document.querySelector('#fotoperfil');
-        cargaPerfil.addEventListener('click', Paginaperfil);   
+        
 
      })
     // Función que lleva desde logo segunda pagina a primera página
     
   };
 
-
-
-
-
+  export const LoadPerfil = () => {
+    document.getElementById('enviaPerfil')
+    .addEventListener('click', () =>{
+       const inputPerfil = document.getElementById('inputNombre').value;
+       perfil(inputPerfil);
+    })
+  
+  };
