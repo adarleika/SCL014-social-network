@@ -7,8 +7,37 @@ import {Paginaprincipal} from './view/templatePosts.js'
   // aqui tu codigo
   console.log('Hola mundo loco!');
 };*/
+<<<<<<< HEAD
+=======
 
 
+
+export  const Login = () => {
+    //const divLoguearse = document.createElement ('div');
+    const viewLogin = `
+    <div class="contenedorInicio" id="inicio">
+
+    <img src="img/logotipo1.png" class="logotipo" alt="logotipo">
+    <p class="iniciarsesion">Iniciar Sesión</p>
+
+    <form id="form-login" class="formato_login">
+        <input class="email" id="email" type="text" placeholder="Correo eléctronico" required>
+        <input class="password" id="password" type="password" placeholder="Contraseña" required>
+
+        <div class="btns">
+        <button> <a href="#" onclick="location.href = document.referrer; return false;" class="atras">Atrás</a></button>
+        <button type="submit" id='btnLogearse'   class="iniciarSesion">Iniciar sesión</button>
+        </div>
+    </form>
+    </div>
+    `;
+>>>>>>> bbf7692... update cambios ada
+
+      window.location.hash = "#/Iniciar-Sesion";
+      document.getElementById('root').innerHTML = viewLogin;
+      loadLogin();
+
+<<<<<<< HEAD
 
 export  const Login = () => {
     //const divLoguearse = document.createElement ('div');
@@ -45,6 +74,39 @@ export  const Login = () => {
    btnLogin.addEventListener('click', () => {
     signIn(Paginaprincipal);
    });
+=======
+    //divLoguearse.innerHTML=viewLoguerase;
+   // return viewLogin;
+
+} 
+
+  const loadLogin = () => {
+  const btnLogin = document.querySelector('#btnLogearse');
+  btnLogin.addEventListener('click', logeo);
+
+  function logeo() {
+    const siginEmail = document.getElementById('email').value;
+    const siginPassword = document.getElementById('password').value;
+
+    console.log(siginEmail, siginPassword);
+
+    const user = {
+      siginEmail ,
+      siginPassword,
+
+    };
+
+    if(siginEmail  === '' || siginPassword === '') {
+      alert('Debe rellenar todos los campos');
+      //console('los campos no deben quedar vacios');
+     }else {
+      signIn(Paginaprincipal, user);
+      alert('Iniciaste Sesion Correctamente');
+      console.log ('pasate a esta parte del logeo')
+     }
+
+  };
+>>>>>>> bbf7692... update cambios ada
   }
 
    

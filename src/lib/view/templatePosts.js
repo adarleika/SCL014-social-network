@@ -1,7 +1,10 @@
 import { registrarse } from './templateRegistrarse.js'
+<<<<<<< HEAD
 import { post} from '../firebase.js'
 import {leeme} from '../firebase.js'
 
+=======
+>>>>>>> bbf7692... update cambios ada
 
 export const Paginaprincipal = () => {
     const posts = ` 
@@ -35,15 +38,33 @@ export const Paginaprincipal = () => {
                     </ul>
                 </div>   -->
 
+<<<<<<< HEAD
                 <!--  </main>
              <div class="btn-imagenes">
                 <img class="previous" src="img/previous.png" alt="">
                 <img class="house" src="img/house.png" alt="">
                 <img class="heart" src="img/heart.png" alt="">
             </div> -->
+=======
+            </main>
+            <div class="btn-imagenes">
+                <img class="previous" src="img/previous.png" alt="">
+                <img class="house" src="img/house.png" alt="">
+                <img class="heart" src="img/heart.png" alt="">
+            </div>
+>>>>>>> bbf7692... update cambios ada
    <!-- </div>-->
    
   `;
+<<<<<<< HEAD
+=======
+
+  window.location.hash = "#/Posts";
+  document.getElementById('root').innerHTML = posts;
+  LoadPosts();
+
+ // return posts;
+>>>>>>> bbf7692... update cambios ada
 
   window.location.hash = "#/Posts";
  document.getElementById('root').innerHTML = posts;
@@ -53,6 +74,7 @@ export const Paginaprincipal = () => {
 //  return posts;
 };
 
+<<<<<<< HEAD
  export const LoadPosts = () => {
      document.getElementById('enviaPost')
      .addEventListener('click', () =>{
@@ -66,5 +88,13 @@ export const Paginaprincipal = () => {
   };
 
 
+=======
+const LoadPosts = () => {
+    // Función que lleva desde logo segunda pagina a primera página
+    const posts = document.getElementById('posts');
+    posts.addEventListener('click', registrarse);
+  };
+
+>>>>>>> bbf7692... update cambios ada
 
 

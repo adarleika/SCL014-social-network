@@ -172,3 +172,43 @@ body {
   display: inline-block;
   border-radius: 5px;
 }
+<<<<<<< HEAD
+=======
+
+.btn-registrarse{
+
+    width: 40%;
+    border-radius: 5px;
+    background-color: #85DCBC;
+    padding: 7px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    list-style: none;
+
+}
+
+.previous{
+    height: 15%;
+    width: 15%;
+}
+
+.house{
+    height: 15%;
+    width: 15%;
+}
+
+.heart{
+    height: 15%;
+    width: 15%;
+}
+
+.btn-imagenes{
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    margin-top: 8px;
+    margin: 2px 0 2px 0;
+    padding-top: 400px;
+}
+>>>>>>> bbf7692... update cambios ada
