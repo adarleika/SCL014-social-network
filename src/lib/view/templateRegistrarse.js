@@ -35,41 +35,21 @@ export const registrarse = () => {
             <option value="INFP">INFP </option>
         </select>
     -->
-<<<<<<< HEAD
         
    <div class="contenedor-botones">
      <a class="boton btn-atras" href="#/Atras" onclick="location.href = document.referrer; return false;">Atrás</a>
      <button type="button" class="boton btn-registrarse" id="btn-registrarse">Registrarse</button>
    </div> 
    `;
-=======
-        <div class="btns">
-        <button type="submit" class="btn-registrarse" id="btn-registrarse">Registrarse</button>
-        </div>
->>>>>>> bbf7692... update cambios ada
 
     window.location.hash = "#/Registrarse";
     document.getElementById('root').innerHTML = registrar;
     loadRegistrar();
 
-<<<<<<< HEAD
 //return registrar;
-=======
-      <!--<div class="btons">
-        <ul class="ejemplo">
-        <li>
-            <a class="atras" href="#/Atras" onclick="location.href = document.referrer; return false;">Atrás</a>
-        </li>
-        <li>
-            <a class="btn-registro" href="#/Registrar">Registrarse</a>
-        </li>
-      </ul> 
-      <div>-->
->>>>>>> bbf7692... update cambios ada
 
 };
 
-<<<<<<< HEAD
 
  const loadRegistrar = () => {
   const btnregistro = document.querySelector('#btn-registrarse');
@@ -77,19 +57,6 @@ export const registrarse = () => {
     sigupForm(Paginaprincipal);
    });
   }
-=======
-        </form>
-   <!-- </main>-->
-   </div>
-   
-    `;
-
-    window.location.hash = "#/Registrarse";
-    document.getElementById('root').innerHTML = registrar;
-    loadRegistrar();
-
-//return registrar;
->>>>>>> bbf7692... update cambios ada
 
 /*
   function registro() {
@@ -112,36 +79,6 @@ export const registrarse = () => {
 
   };
 
-<<<<<<< HEAD
      
 }
 */
-=======
-
- const loadRegistrar = () => {
-  const btnregistro = document.querySelector('#btn-registrarse');
-  btnregistro.addEventListener('click', registro);
-
-
-  function registro() {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    const user = {
-      email,
-      password,
-
-    };
-
-    if(email === '' || password === '') {
-      alert('Los campos no deben quedar vacios');
-      //console('los campos no deben quedar vacios');
-     }else {
-      sigupForm(Paginaprincipal, user);
-     // alert('Te has registrado exitosamente, inicie sesion con los datos de su cuenta!');
-     }
-
-  };
-     
-}
->>>>>>> bbf7692... update cambios ada

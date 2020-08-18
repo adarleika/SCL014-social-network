@@ -1,12 +1,8 @@
 import { registrarse } from './templateRegistrarse.js';
 import { signIn} from '../firebase.js';
-<<<<<<< HEAD
 import {inicioGoogle} from '../firebase.js'
 import {Login} from '../index.js';
 import{Paginaprincipal} from './templatePosts.js'
-=======
-import {Login} from '../index.js';
->>>>>>> bbf7692... update cambios ada
 
 export const inicio = () => {
     const viewInicio = `
@@ -17,26 +13,9 @@ export const inicio = () => {
         <input type="image" class="logoGoogle" src="img/google.png" alt="imagenGoogle"/>
         <button type="button"  class="botongoogle" id="botongoogle">Iniciar sesión con Google</button>
 
-<<<<<<< HEAD
       <div class="contenedor-botones">
         <a class="boton btn-iniciosesion" id="btn-iniciosesion" href="#/Iniciar-Sesion">Iniciar Sesion</a>
         <a class="boton btn-registrarse" id="btn-registrarse" href="#/Registrarse">Registrarse</a>
-=======
-      <div class="botones">
-        <!--<button class="iniciarSesion" id="iniciarSesion">Iniciar sesión</button>
-            <button class="registrarse" id="registrarse"> Registrarse</button>
-            <button type="button" class="btn-registra" id="btn-registra" display="none"> Registrarse</button> 
-        -->
-
-          <ul class="ejemplo">
-            <li>
-                <a class="btn-iniciosesion" id="btn-iniciosesion" href="#/Iniciar-Sesion">Iniciar Sesion</a>
-            </li>
-            <li>
-                <a class="btn-registrarse" id="btn-registrarse" href="#/Registrarse">Registrarse</a>
-            </li>
-          </ul> 
->>>>>>> bbf7692... update cambios ada
       </div>
 
     <a href="https://www.16personalities.com/es/test-de-personalidad">
@@ -50,11 +29,7 @@ export const inicio = () => {
     window.location.hash = "#/";
     document.getElementById('root').innerHTML = viewInicio;
     LoadRegistrarFuncion();
-<<<<<<< HEAD
     //LoginGoogle();
-=======
-    
->>>>>>> bbf7692... update cambios ada
 };
 
 const LoadRegistrarFuncion = () => {
@@ -68,7 +43,6 @@ const LoadRegistrarFuncion = () => {
     btnRegistrarse.addEventListener('click', registrarse);
      
     
-<<<<<<< HEAD
     /*const btnLoginGoogle = document.querySelector('#botongoogle');
     btnLoginGoogle.addEventListener('click', () => {
     inicioGoogle(Paginaprincipal);
@@ -92,9 +66,3 @@ const LoginGoogle = () => {
   });
  }
 */
-=======
-
-};
- 
-  
->>>>>>> bbf7692... update cambios ada
